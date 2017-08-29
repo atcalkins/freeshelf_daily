@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'book/index'
+
   get 'book/create'
 
   get 'book/update'
