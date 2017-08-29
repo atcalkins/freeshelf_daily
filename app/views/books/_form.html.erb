@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.datetime_select :author, id: :book_author %>
+    <%= form.text_field :author, id: :book_author %>
   </div>
 
   <div class="field">
@@ -35,7 +35,6 @@
     <%= form.label :url %>
     <%= form.text_field :url, id: :book_url %>
   </div>
-
 
   <div class="actions">
     <%= form.submit %>

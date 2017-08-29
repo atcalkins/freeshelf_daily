@@ -1,4 +1,6 @@
-class BookController < ApplicationController
+class BooksController < ApplicationController
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
+
   def index
     @books = Book.all
   end
@@ -21,6 +23,10 @@ class BookController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def update
     respond_to do |format|
       if @book.update(book_params)
@@ -34,6 +40,7 @@ class BookController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
@@ -52,10 +59,6 @@ class BookController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def book_params
-    params.require(:book).permit(:title, :author, :description :genre: :url)
-    #requiring the hash name to be event, and the columns that will pass through
+    params.require(:book).permit(:title, :author, :description, :genre, :url)
   end
-end
-
-
 end
