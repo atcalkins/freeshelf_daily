@@ -1,0 +1,30 @@
+<h1>Signup for FreeShelf</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+<% if current_user %>
+You are now logged in as: <%= current_user.email %>.
+<%= link_to "Log out", session_path, method: :destroy %>.
+<% else %>
+You are not logged in.
+<% end %>
+
+<%= form_tag session_path do %>
+Email: <%= text_field_tag :email %>
+Password: <%= password_field_tag :password %>
+<%= submit_tag "Submit" %>
+<% end %>
+
+<% if current_user %>
+  You are now logged in as: <%= current_user.email %>.
+<% else %>
+  You are not logged in. Need an account? <%= link_to "Sign up", new_users_path %>.
+<% end %>
