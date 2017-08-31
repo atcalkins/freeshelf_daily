@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :url
       t.string :genre
-
+      t.belongs_to :user, index: true
       t.timestamps
     end
   end

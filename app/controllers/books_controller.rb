@@ -7,6 +7,8 @@ class BooksController < ApplicationController
     @books = Book.page(params[:page]).per(10)
   end
 
+
+
   def new
     @book = Book.new
   end
@@ -60,6 +62,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :description, :genre, :url)
+    params.require(:book).permit(:title, :author, :description, :genre, :url, :user_id)
   end
 end
